@@ -27,7 +27,13 @@ static char InternalFilePaths[STATE_LEVEL_COUNT + 2][14] = {
     "nulla.leb",    "a01.leb",     "a02.leb",      "a03.leb",      "a04.leb",     "a05.leb",
     "a06.leb",      "a07.leb",     "ujtag.leb",    "a08.leb",      "a09.leb",     "ujgrav.leb",
     "a10.leb",      "a11.leb",     "a12.leb",      "a13.leb",      "a14.leb",     "a15.leb",
-    "a16.leb",      "a17.leb",     "ujupdown.leb", "a18.leb",      "a19.leb",     "a20.leb",
+    "a16.leb",
+    #ifdef ELMA_SHAREWARE
+    "ujvege.leb",
+    #else
+    "a17.leb",
+    #endif
+    "ujupdown.leb", "a18.leb",      "a19.leb",     "a20.leb",
     "a21.leb",      "a22.leb",     "a23.leb",      "a24.leb",      "a25.leb",     "a26.leb",
     "ujkomb.leb",   "a27.leb",     "ujtolcs.leb",  "a28.leb",      "ujzuhan.leb", "a29.leb",
     "a30.leb",      "a31.leb",     "a32.leb",      "ujvissza.leb", "a33.leb",     "a34.leb",

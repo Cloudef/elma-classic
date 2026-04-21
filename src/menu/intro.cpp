@@ -97,9 +97,12 @@ void menu_intro() {
 void menu_exit() {
     WallsDisabled = true;
     menu_pic* menu = new menu_pic;
+
+    #ifndef ELMA_SHAREWARE
     menu->add_line_centered("Thank you for registering the game!", 320, 220);
     menu->add_line_centered("Please do not distribute!", 320, 300);
-
     menu->loop();
+    #endif
+
     quit();
 }

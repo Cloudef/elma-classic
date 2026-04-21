@@ -21,7 +21,11 @@
 
 static void menu_demo() {
     constexpr int DEMO_REPLAY_COUNT = 3;
+    #ifdef ELMA_SHAREWARE
+    constexpr recname DEMO_NAMES[DEMO_REPLAY_COUNT] = {"demos1.rec", "demos2.rec", "demos3.rec"};
+    #else
     constexpr recname DEMO_NAMES[DEMO_REPLAY_COUNT] = {"demor1.rec", "demor2.rec", "demor3.rec"};
+    #endif
 
     int previous_demo = -1;
 
