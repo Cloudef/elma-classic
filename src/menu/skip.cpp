@@ -6,7 +6,11 @@
 #include <cstring>
 
 bool is_skippable(int index) {
+    #ifdef ELMA_SHAREWARE
+    constexpr int MAX_SKIPS = 3;
+    #else
     constexpr int MAX_SKIPS = 5;
+    #endif
 
     player* cur_player = State->get_player(State->player1);
     if (cur_player->levels_completed != index) {
