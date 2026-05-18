@@ -82,9 +82,10 @@ void menu_intro() {
     }
 
     if (State->player_count == 0) {
-        if (!menu_player_create(true)) {
-            menu_exit();
-        }
+        strcpy(State->players[0].name, "Sorvi");
+        strcpy(State->player1, "Sorvi");
+        State->player_count++;
+        strcpy(State->player2, State->player1);
     } else {
         if (!menu_player_choose(true, false)) {
             menu_exit();
