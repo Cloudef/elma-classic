@@ -295,7 +295,11 @@ void recorder::store_frames(motorst* mot, double time, bike_sound* sound) {
         sound->motor_frequency = std::max(sound->motor_frequency, 1.0);
         frames[i].motor_frequency =
             (unsigned char)(MOTOR_FREQUENCY_RATIO * (sound->motor_frequency - 1.0));
-        frames[i].friction_volume = (unsigned char)(FRICTION_VOLUME_RATIO * sound->friction_volume);
+        if (FRICTION_VOLUME_RATIO * sound->friction_volume > 255) {
+            frames[i].friction_volume = 255;
+        } else {
+            frames[i].friction_volume = (unsigned char)(FRICTION_VOLUME_RATIO * sound->friction_volume);
+        }
 
         next_frame_index++;
         next_frame_time += FRAME_INDEX_TO_TIME;
